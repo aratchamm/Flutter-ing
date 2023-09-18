@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:test/ThirdScreen.dart';
-import 'package:flutter_animate/flutter_animate.dart';
+import 'package:test/FirstScreen.dart';
 
 class SecondScreen extends StatefulWidget {
   SecondScreen({Key? key}) : super(key: key);
@@ -35,6 +35,31 @@ class _SecondScreenState extends State<SecondScreen> {
               fit: BoxFit.cover,
               width: double.infinity,
               height: double.infinity,
+            ),
+
+            Positioned(
+              top: 30,
+              left: 0,
+              right: 0,
+              child: GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => FirstScreen(),
+                    ),
+                  );
+                },
+                child: Center(
+                  child: Container(
+                    width: 20, // Set the width as needed
+                    child: Image.asset(
+                      'assets/images/top_second.png',
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                ),
+              ),
             ),
 
             // Content on top of the background and logo with Margin

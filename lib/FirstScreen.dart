@@ -10,7 +10,6 @@ class FirstScreen extends StatefulWidget {
 }
 
 class _FirstScreenState extends State<FirstScreen> {
-
   final ButtonStyle customButtonStyle = ElevatedButton.styleFrom(
     backgroundColor: Color(0xFF114817),
     minimumSize: Size(200, 50),

@@ -5,6 +5,6 @@ import 'package:test/ThirdScreen.dart';
 
 void main() {
   runApp(MaterialApp(
-    home: ThirdScreen(),
+    home: FirstScreen(),
   ));
 }
