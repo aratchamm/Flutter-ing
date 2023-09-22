@@ -64,7 +64,7 @@ class _SecondScreenState extends State<SecondScreen> {
 
             // Content on top of the background and logo with Margin
             Positioned(
-              top: MediaQuery.of(context).size.height - 750,
+              top: MediaQuery.of(context).size.height - 730,
               left: 0,
               right: 0,
               child: Center(

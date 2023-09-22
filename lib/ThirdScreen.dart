@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:test/FirstScreen.dart';
 import 'package:test/SecondScreen.dart';
+import 'package:firebase_database/firebase_database.dart';
 
 class ThirdScreen extends StatefulWidget {
   ThirdScreen({Key? key}) : super(key: key);
@@ -10,6 +11,12 @@ class ThirdScreen extends StatefulWidget {
 }
 
 class _ThirdScreenState extends State<ThirdScreen> {
+  DatabaseReference dbRef =
+      FirebaseDatabase.instance.reference().child('session');
+
+  int? a;
+  int? b;
+
   final ButtonStyle ButtonSTARTStyle = ElevatedButton.styleFrom(
     backgroundColor: Color(0xFF9AC89B),
     minimumSize: Size(200, 50),
@@ -22,6 +29,20 @@ class _ThirdScreenState extends State<ThirdScreen> {
       ),
     ),
   );
+
+  @override
+  void initState() {
+    super.initState();
+
+    // สมัครตัวเฝ้าระวังการเปลี่ยนแปลงข้อมูลใน Firebase Realtime Database
+    dbRef.onValue.listen((event) {
+      final data = event.snapshot.value as Map<dynamic, dynamic>;
+      setState(() {
+        b = data['beatAvg'];
+        a = data['calculateCalories'];
+      });
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -85,7 +106,7 @@ class _ThirdScreenState extends State<ThirdScreen> {
             ),
 
             Positioned(
-              top: MediaQuery.of(context).size.height - 673,
+              top: MediaQuery.of(context).size.height - 668,
               left: MediaQuery.of(context).size.width - 115,
               right: 0,
               child: Container(
@@ -102,15 +123,15 @@ class _ThirdScreenState extends State<ThirdScreen> {
 
             // Content on top of the background and logo with Margin
             Positioned(
-              top: MediaQuery.of(context).size.height - 650,
+              top: MediaQuery.of(context).size.height - 625,
               left: 60,
               right: 0,
               child: Container(
                   child: Text(
-                '320',
+                '${a ?? '...'}',
                 style: TextStyle(
                   color: Color.fromARGB(255, 0, 0, 0),
-                  fontSize: 72,
+                  fontSize: 52,
                   fontWeight: FontWeight.bold,
                   fontFamily: 'Montserrat',
                 ),
@@ -118,15 +139,15 @@ class _ThirdScreenState extends State<ThirdScreen> {
             ),
 
             Positioned(
-              top: MediaQuery.of(context).size.height - 550,
+              top: MediaQuery.of(context).size.height - 535,
               left: 60,
               right: 0,
               child: Container(
                   child: Text(
-                '130',
+                '${b ?? '...'}',
                 style: TextStyle(
                   color: Color.fromARGB(255, 0, 0, 0),
-                  fontSize: 72,
+                  fontSize: 64,
                   fontWeight: FontWeight.bold,
                   fontFamily: 'Montserrat',
                 ),
