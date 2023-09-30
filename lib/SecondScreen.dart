@@ -38,7 +38,7 @@ class _SecondScreenState extends State<SecondScreen> {
             ),
 
             Positioned(
-              top: 30,
+              top: 50,
               left: 0,
               right: 0,
               child: GestureDetector(
@@ -64,7 +64,7 @@ class _SecondScreenState extends State<SecondScreen> {
 
             // Content on top of the background and logo with Margin
             Positioned(
-              top: MediaQuery.of(context).size.height - 730,
+              top: MediaQuery.of(context).size.height - 640,
               left: 0,
               right: 0,
               child: Center(
@@ -73,7 +73,7 @@ class _SecondScreenState extends State<SecondScreen> {
                   '25,032',
                   style: TextStyle(
                     color: Color(0xFF114817),
-                    fontSize: 72,
+                    fontSize: 56,
                     fontWeight: FontWeight.bold,
                     fontFamily: 'Montserrat',
                   ),
@@ -83,12 +83,12 @@ class _SecondScreenState extends State<SecondScreen> {
             ),
 
             Positioned(
-              top: MediaQuery.of(context).size.height - 540,
+              top: MediaQuery.of(context).size.height - 460,
               left: 0,
               right: 0,
               child: Center(
                 child: Container(
-                  width: MediaQuery.of(context).size.width - 200,
+                  width: MediaQuery.of(context).size.width - 150,
                   child: ElevatedButton(
                     onPressed: () {
                       Navigator.push(

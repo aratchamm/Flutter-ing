@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:test/FirstScreen.dart';
 import 'package:test/SecondScreen.dart';
 import 'package:firebase_database/firebase_database.dart';
+import 'dart:async';
 
 class ThirdScreen extends StatefulWidget {
   ThirdScreen({Key? key}) : super(key: key);
@@ -16,6 +17,8 @@ class _ThirdScreenState extends State<ThirdScreen> {
 
   int? a;
   int? b;
+  int _elapsedTime = 0;
+  late Timer _timer;
 
   final ButtonStyle ButtonSTARTStyle = ElevatedButton.styleFrom(
     backgroundColor: Color(0xFF9AC89B),
@@ -42,6 +45,33 @@ class _ThirdScreenState extends State<ThirdScreen> {
         a = data['calculateCalories'];
       });
     });
+
+    _timer = Timer.periodic(Duration(seconds: 1), (timer) {
+      setState(() {
+        _elapsedTime++;
+      });
+    });
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+
+    // อย่าลืมยกเลิกการใช้งาน Timer เมื่อ Widget ถูก dispose
+    _timer.cancel();
+  }
+
+  // ฟังก์ชันแปลงเวลาจากวินาทีเป็น "hh:mm:ss"
+  String formatElapsedTime(int elapsedSeconds) {
+    final hours = elapsedSeconds ~/ 3600;
+    final minutes = (elapsedSeconds % 3600) ~/ 60;
+    final seconds = elapsedSeconds % 60;
+
+    final hoursStr = hours.toString().padLeft(2, '0');
+    final minutesStr = minutes.toString().padLeft(2, '0');
+    final secondsStr = seconds.toString().padLeft(2, '0');
+
+    return '$hoursStr:$minutesStr:$secondsStr';
   }
 
   @override
@@ -59,7 +89,7 @@ class _ThirdScreenState extends State<ThirdScreen> {
             ),
 
             Positioned(
-              top: 30,
+              top: 50,
               left: 0,
               right: 0,
               child: GestureDetector(
@@ -84,7 +114,7 @@ class _ThirdScreenState extends State<ThirdScreen> {
             ),
 
             Positioned(
-              top: 80,
+              top: 75,
               left: 40, // Set the distance from the top as needed
               child: GestureDetector(
                 onTap: () {
@@ -96,7 +126,8 @@ class _ThirdScreenState extends State<ThirdScreen> {
                   );
                 },
                 child: Container(
-                  width: 20, // Set the width as needed
+                  width: 20,
+                  // Set the width as needed
                   child: Image.asset(
                     'assets/images/back.png',
                     fit: BoxFit.cover,
@@ -106,15 +137,15 @@ class _ThirdScreenState extends State<ThirdScreen> {
             ),
 
             Positioned(
-              top: MediaQuery.of(context).size.height - 668,
-              left: MediaQuery.of(context).size.width - 115,
+              top: MediaQuery.of(context).size.height - 605,
+              left: MediaQuery.of(context).size.width - 105,
               right: 0,
               child: Container(
                   child: Text(
-                '1:39:06',
+                '${formatElapsedTime(_elapsedTime)}',
                 style: TextStyle(
                   color: Color.fromARGB(255, 0, 0, 0),
-                  fontSize: 12,
+                  fontSize: 10,
                   fontWeight: FontWeight.bold,
                   fontFamily: 'Montserrat',
                 ),
@@ -123,31 +154,36 @@ class _ThirdScreenState extends State<ThirdScreen> {
 
             // Content on top of the background and logo with Margin
             Positioned(
-              top: MediaQuery.of(context).size.height - 625,
-              left: 60,
+              top: a == null
+                  ? MediaQuery.of(context).size.height - 550
+                  : MediaQuery.of(context).size.height - 570,
+              left: 50,
               right: 0,
               child: Container(
-                  child: Text(
-                '${a ?? '...'}',
-                style: TextStyle(
-                  color: Color.fromARGB(255, 0, 0, 0),
-                  fontSize: 52,
-                  fontWeight: FontWeight.bold,
-                  fontFamily: 'Montserrat',
+                child: Text(
+                  '${a ?? 'load...'}',
+                  style: TextStyle(
+                    color: Color.fromARGB(255, 0, 0, 0),
+                    fontSize: a == null ? 20 : 38,
+                    fontWeight: FontWeight.bold,
+                    fontFamily: 'Montserrat',
+                  ),
                 ),
-              )),
+              ),
             ),
 
             Positioned(
-              top: MediaQuery.of(context).size.height - 535,
-              left: 60,
+              top: b != null
+                  ? MediaQuery.of(context).size.height - 485
+                  : MediaQuery.of(context).size.height - 455,
+              left: 50,
               right: 0,
               child: Container(
                   child: Text(
-                '${b ?? '...'}',
+                '${b ?? 'load...'}',
                 style: TextStyle(
                   color: Color.fromARGB(255, 0, 0, 0),
-                  fontSize: 64,
+                  fontSize: b == null ? 20 : 48,
                   fontWeight: FontWeight.bold,
                   fontFamily: 'Montserrat',
                 ),

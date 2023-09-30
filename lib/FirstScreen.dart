@@ -46,7 +46,7 @@ class _FirstScreenState extends State<FirstScreen> {
 
             // Content on top of the background and logo with Margin
             Positioned(
-              top: MediaQuery.of(context).size.height - 700,
+              top: MediaQuery.of(context).size.height - 620,
               left: 0,
               right: 0,
               child: Center(
@@ -55,7 +55,7 @@ class _FirstScreenState extends State<FirstScreen> {
                   'AN APP THAT REWARDS YOU AFTER AN EXERCISE,\nWHICH IS WHAT YOU DESERVE.',
                   style: TextStyle(
                     color: Color(0xFF114817),
-                    fontSize: 14,
+                    fontSize: 10,
                     fontWeight: FontWeight.bold,
                     fontFamily: 'Montserrat',
                   ),
@@ -80,12 +80,12 @@ class _FirstScreenState extends State<FirstScreen> {
 
             // Content on top of the background and logo with Margin
             Positioned(
-              bottom: 200,
+              bottom: 130,
               left: 0,
               right: 0,
               child: Center(
                 child: Container(
-                  width: MediaQuery.of(context).size.width - 200,
+                  width: MediaQuery.of(context).size.width - 150,
                   child: ElevatedButton(
                     onPressed: () {
                       Navigator.push(
