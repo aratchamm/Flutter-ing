@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'SignInPage2.dart';
 import 'SignInFormField.dart';
+import 'signInPage_calibrationBefore.dart';
 
 class SignInPage3 extends StatelessWidget {
   const SignInPage3({Key? key}) : super(key: key);
@@ -144,7 +145,13 @@ class SignInPage3 extends StatelessWidget {
                   height: 50,
                 ),
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => SignInPage_calibrationBefore()),
+                    );
+                  },
                   child: const Text('NEXT'),
                   style: customButtonStyle,
                 ),

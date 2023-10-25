@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'signInPage_calibrationBefore.dart';
+import 'ProfilePage.dart';
 import 'package:flutter/services.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
@@ -18,7 +18,7 @@ void main() async {
   runApp(
     MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: SignInPage_calibrationBefore(),
+      home: ProfilePage(),
       theme: ThemeData(
         fontFamily: 'Montserrat',
       ),

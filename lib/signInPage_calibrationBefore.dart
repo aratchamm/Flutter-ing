@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'SignInPage3.dart';
+import 'signInPage_calibrationFindFriends.dart';
 
 class SignInPage_calibrationBefore extends StatelessWidget {
   const SignInPage_calibrationBefore({Key? key}) : super(key: key);
@@ -88,26 +89,50 @@ class SignInPage_calibrationBefore extends StatelessWidget {
                 SizedBox(
                   height: 40,
                 ),
-                Image(
-                  image: NetworkImage(
-                      'assets/images/buttonStart_calibrationBefore.png'),
+                IconButton(
+                  // Adjust the scale factor as needed
+                  icon: Image(
+                    image: NetworkImage(
+                        'assets/images/buttonStart_calibrationBefore.png'),
+                  ),
+                  iconSize: 150,
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) =>
+                              SignInPage_calibrationFindFriends()),
+                    );
+                  },
                 ),
                 SizedBox(
-                  height: 60,
+                  height: 40,
                 ),
                 Image(
                   image:
                       NetworkImage('assets/images/image_calibrationBefore.png'),
                 ),
                 SizedBox(
-                  height: 60,
+                  height: 40,
                 ),
-                Text(
-                  "Don't Have a HEARTWARE?",
-                  style: TextStyle(
-                    decoration: TextDecoration.underline,
-                    fontSize: 16,
-                    color: Color(0xFFF7F2E3),
+                RichText(
+                  text: TextSpan(
+                    style: TextStyle(
+                      fontSize: 14,
+                      color: Color(0xFFF7F2E3),
+                      fontFamily: 'Montserrat',
+                    ),
+                    children: [
+                      TextSpan(
+                        text: "Don't have a ",
+                      ),
+                      TextSpan(
+                        text: 'HEARTWARE?',
+                        style: TextStyle(
+                          decoration: TextDecoration.underline,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ],
