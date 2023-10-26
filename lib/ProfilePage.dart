@@ -17,34 +17,59 @@ class ProfilePage extends StatelessWidget {
         elevation: 0,
         titleSpacing: -30,
         centerTitle: true,
-        title: Text(
-          "Your Wallet".toUpperCase(),
-          style: TextStyle(fontSize: 18, color: Color(0xffF7F2E3)),
+        title: Column(
+          children: [
+            RotationTransition(
+              turns: AlwaysStoppedAnimation(270 / 360),
+              child: Icon(Icons.arrow_back_ios,
+                  color: Color(0xFFF7F2E3), size: 24),
+            ),
+            SizedBox(
+              height: 15,
+            ),
+            Text(
+              "Your Wallet".toUpperCase(),
+              style: TextStyle(
+                  fontSize: 24,
+                  color: Color(0xffF7F2E3),
+                  fontWeight: FontWeight.bold),
+            ),
+          ],
         ),
-        leadingWidth: 110,
-        leading: IconButton(
-          icon: Icon(Icons.arrow_back_ios, color: Color(0xFFF7F2E3), size: 24),
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                  builder: (context) => SignInPage_calibrationBefore()),
-            );
-          },
+        leadingWidth: 80,
+        leading: Column(
+          children: [
+            SizedBox(
+              height: 39,
+            ),
+            IconButton(
+              icon: Icon(Icons.arrow_back_ios,
+                  color: Color.fromRGBO(247, 242, 227, 1), size: 24),
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => SignInPage_calibrationBefore()),
+                );
+              },
+            ),
+          ],
         ),
         actions: [
-          Icon(
-            Icons.search,
-            color: Color(0xFFF7F2E3),
-            size: 30,
-          ),
-          Icon(
-            Icons.wallet_outlined,
-            color: Color(0xFFF7F2E3),
-            size: 30,
-          ),
-          Padding(
-            padding: EdgeInsets.only(right: 20),
+          Column(
+            children: [
+              SizedBox(
+                height: 44,
+              ),
+              Padding(
+                padding: const EdgeInsets.only(right: 20.0),
+                child: Icon(
+                  Icons.search,
+                  color: Color(0xFFF7F2E3),
+                  size: 30,
+                ),
+              ),
+            ],
           ),
         ],
       ),
@@ -62,16 +87,23 @@ class ProfilePage extends StatelessWidget {
             ),
           ),
           Column(
-            // ignore: prefer_const_literals_to_create_immutables
             children: [
-              Column(
+              SizedBox(
+                height: 100,
+              ),
+              CardWallet(),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  SizedBox(
-                    height: 80,
-                  ),
-                  CardWallet(),
+                  CardAnother(TitleText: "TOP-UP"),
+                  CardAnother(TitleText: "tRANSFER"),
+                  CardAnother(TitleText: "ADD A CARD"),
                 ],
               ),
+              SizedBox(
+                height: 20,
+              ),
+              CardAddress(),
             ],
           ),
           Positioned(
