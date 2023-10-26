@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:test/SignInFormField.dart';
 import 'signInPage_calibrationBefore.dart';
 import 'navBarBottom.dart';
+import 'cardWallet.dart';
 
 class ProfilePage extends StatelessWidget {
   ProfilePage({Key? key}) : super(key: key);
@@ -17,7 +18,7 @@ class ProfilePage extends StatelessWidget {
         titleSpacing: -30,
         centerTitle: true,
         title: Text(
-          "@ANDAMANSPEAKS",
+          "Your Wallet".toUpperCase(),
           style: TextStyle(fontSize: 18, color: Color(0xffF7F2E3)),
         ),
         leadingWidth: 110,
@@ -61,8 +62,16 @@ class ProfilePage extends StatelessWidget {
             ),
           ),
           Column(
+            // ignore: prefer_const_literals_to_create_immutables
             children: [
-              // Your content for the body here
+              Column(
+                children: [
+                  SizedBox(
+                    height: 80,
+                  ),
+                  CardWallet(),
+                ],
+              ),
             ],
           ),
           Positioned(

@@ -9,7 +9,6 @@ class NavBarBottom extends StatelessWidget {
       children: [
         const Divider(
           color: Colors.black,
-          height: 0,
           thickness: 2,
           indent: 20,
           endIndent: 20,

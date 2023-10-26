@@ -63,38 +63,40 @@ class SettingPage extends StatelessWidget {
         decoration: const BoxDecoration(
           color: Color(0xffF7F2E3),
         ),
-        child: Column(
-          children: [
-            SizedBox(
-              height: 80,
-            ),
-            Stack(
-              children: [
-                Image.network('assets/images/bgImageTop_settingPage.png'),
-                Positioned(
-                  bottom: 30,
-                  right: 0,
-                  left: 0,
-                  child: FractionallySizedBox(
-                    widthFactor: 0.5, // Set the width to 50%
-                    child: ElevatedButton(
-                      onPressed: () {},
-                      child: Text('LOG OUT'),
-                      style: customButtonStyle,
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              SizedBox(
+                height: 80,
+              ),
+              Stack(
+                children: [
+                  Image.network('assets/images/bgImageTop_settingPage.png'),
+                  Positioned(
+                    bottom: 30,
+                    right: 0,
+                    left: 0,
+                    child: FractionallySizedBox(
+                      widthFactor: 0.5, // Set the width to 50%
+                      child: ElevatedButton(
+                        onPressed: () {},
+                        child: Text('LOG OUT'),
+                        style: customButtonStyle,
+                      ),
                     ),
-                  ),
-                )
-              ],
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            Align(
-              alignment: Alignment.bottomCenter,
-              child:
-                  Image.network('assets/images/bgImageBottom_settingPage.png'),
-            ),
-          ],
+                  )
+                ],
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Align(
+                alignment: Alignment.bottomCenter,
+                child: Image.network(
+                    'assets/images/bgImageBottom_settingPage.png'),
+              ),
+            ],
+          ),
         ),
       ),
     );

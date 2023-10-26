@@ -55,117 +55,119 @@ class SignInPage1 extends StatelessWidget {
             image: NetworkImage('assets/images/background-image_signIn_1.png'),
           ),
         ),
-        child: Column(
-          children: [
-            SizedBox(
-              height: 60,
-            ),
-            const Divider(
-              color: Colors.black,
-              height: 25,
-              thickness: 1,
-              indent: 40,
-              endIndent: 40,
-            ),
-            SizedBox(
-              height: 40,
-            ),
-            Column(
-              children: [
-                Text(
-                  "Fitcare Savings".toUpperCase(),
-                  style: TextStyle(fontSize: 16),
-                ),
-                SizedBox(
-                  height: 15,
-                ),
-                Text(
-                  "Let's Get Started!",
-                  style: TextStyle(fontSize: 30),
-                ),
-              ],
-            ),
-            SizedBox(
-              height: 50,
-            ),
-            Column(
-              children: [
-                Text(
-                  "General InfoRmation".toUpperCase(),
-                  style: TextStyle(fontSize: 16, fontStyle: FontStyle.italic),
-                ),
-                SizedBox(
-                  height: 20,
-                ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 70),
-                  child: SignInForm(),
-                ),
-                ElevatedButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const SignInPage2()),
-                    );
-                  },
-                  child: const Text('NEXT'),
-                  style: customButtonStyle,
-                ),
-              ],
-            ),
-            SizedBox(
-              height: 50,
-            ),
-            Column(
-              children: [
-                Text(
-                  "Create Account".toUpperCase(),
-                  style: TextStyle(
-                      fontSize: 16,
-                      fontStyle: FontStyle.italic,
-                      color: Color(0xFFCF9A40)),
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                Text(
-                  "|".toUpperCase(),
-                  style: TextStyle(fontSize: 16, color: Color(0xFFCF9A40)),
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                Text(
-                  "Verify Phone number".toUpperCase(),
-                  style: TextStyle(
-                      fontSize: 16,
-                      fontStyle: FontStyle.italic,
-                      color: Color(0xFFCF9A40)),
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                Text(
-                  "|".toUpperCase(),
-                  style: TextStyle(fontSize: 16, color: Color(0xFFCF9A40)),
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                Text(
-                  "Calibrate Heartware".toUpperCase(),
-                  style: TextStyle(
-                      fontSize: 16,
-                      fontStyle: FontStyle.italic,
-                      color: Color(0xFFCF9A40)),
-                ),
-                SizedBox(
-                  height: 20,
-                ),
-              ],
-            ),
-          ],
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              SizedBox(
+                height: 60,
+              ),
+              const Divider(
+                color: Colors.black,
+                height: 25,
+                thickness: 1,
+                indent: 40,
+                endIndent: 40,
+              ),
+              SizedBox(
+                height: 40,
+              ),
+              Column(
+                children: [
+                  Text(
+                    "Fitcare Savings".toUpperCase(),
+                    style: TextStyle(fontSize: 16),
+                  ),
+                  SizedBox(
+                    height: 15,
+                  ),
+                  Text(
+                    "Let's Get Started!",
+                    style: TextStyle(fontSize: 30),
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 50,
+              ),
+              Column(
+                children: [
+                  Text(
+                    "General InfoRmation".toUpperCase(),
+                    style: TextStyle(fontSize: 16, fontStyle: FontStyle.italic),
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 70),
+                    child: SignInForm(),
+                  ),
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const SignInPage2()),
+                      );
+                    },
+                    child: const Text('NEXT'),
+                    style: customButtonStyle,
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 50,
+              ),
+              Column(
+                children: [
+                  Text(
+                    "Create Account".toUpperCase(),
+                    style: TextStyle(
+                        fontSize: 16,
+                        fontStyle: FontStyle.italic,
+                        color: Color(0xFFCF9A40)),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Text(
+                    "|".toUpperCase(),
+                    style: TextStyle(fontSize: 16, color: Color(0xFFCF9A40)),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Text(
+                    "Verify Phone number".toUpperCase(),
+                    style: TextStyle(
+                        fontSize: 16,
+                        fontStyle: FontStyle.italic,
+                        color: Color(0xFFCF9A40)),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Text(
+                    "|".toUpperCase(),
+                    style: TextStyle(fontSize: 16, color: Color(0xFFCF9A40)),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Text(
+                    "Calibrate Heartware".toUpperCase(),
+                    style: TextStyle(
+                        fontSize: 16,
+                        fontStyle: FontStyle.italic,
+                        color: Color(0xFFCF9A40)),
+                  ),
+                  SizedBox(
+                    height: 20,
+                  ),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );
