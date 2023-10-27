@@ -38,7 +38,7 @@ class SignInPage_calibrationFindFriends extends StatelessWidget {
         decoration: const BoxDecoration(
           image: DecorationImage(
             fit: BoxFit.fill,
-            image: NetworkImage('assets/images/bgImage_calibrationBefore.png'),
+            image: AssetImage('assets/images/bgImage_calibrationBefore.png'),
           ),
         ),
         child: Column(
@@ -47,7 +47,7 @@ class SignInPage_calibrationFindFriends extends StatelessWidget {
               child: Column(
                 children: [
                   SizedBox(
-                    height: 60,
+                    height: 100,
                   ),
                   const Divider(
                     color: Color(0xFFF7F2E3),
@@ -62,7 +62,7 @@ class SignInPage_calibrationFindFriends extends StatelessWidget {
                   Text(
                     "Calibration".toUpperCase(),
                     style: TextStyle(
-                      fontSize: 36,
+                      fontSize: 32,
                       color: Color(0xFFF7F2E3),
                     ),
                   ),
@@ -72,7 +72,7 @@ class SignInPage_calibrationFindFriends extends StatelessWidget {
                   Text(
                     "of Heart rate wearable".toUpperCase(),
                     style: TextStyle(
-                      fontSize: 24,
+                      fontSize: 16,
                       color: Color(0xFFF7F2E3),
                     ),
                   ),
@@ -83,10 +83,10 @@ class SignInPage_calibrationFindFriends extends StatelessWidget {
               alignment: Alignment.bottomCenter,
               child: Stack(
                 children: [
-                  Image.network(
+                  Image.asset(
                       'assets/images/BottomImage_calibrationFindFriends.png'),
                   Positioned(
-                    bottom: 50,
+                    bottom: 30,
                     right: 0,
                     left: 0,
                     child: TextButton(
@@ -99,7 +99,7 @@ class SignInPage_calibrationFindFriends extends StatelessWidget {
                         );
                       },
                       child: Text(
-                        "To continue without HEARTWEAE",
+                        "To continue without HEARTWEARE",
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           color: Color(0xFF114817),

@@ -38,7 +38,7 @@ class SignInPage_calibrationBefore extends StatelessWidget {
         decoration: const BoxDecoration(
           image: DecorationImage(
             fit: BoxFit.fill,
-            image: NetworkImage('assets/images/bgImage_calibrationBefore.png'),
+            image: AssetImage('assets/images/bgImage_calibrationBefore.png'),
           ),
         ),
         child: SingleChildScrollView(
@@ -93,7 +93,7 @@ class SignInPage_calibrationBefore extends StatelessWidget {
                   IconButton(
                     // Adjust the scale factor as needed
                     icon: Image(
-                      image: NetworkImage(
+                      image: AssetImage(
                           'assets/images/buttonStart_calibrationBefore.png'),
                     ),
                     iconSize: 150,
@@ -110,7 +110,7 @@ class SignInPage_calibrationBefore extends StatelessWidget {
                     height: 40,
                   ),
                   Image(
-                    image: NetworkImage(
+                    image: AssetImage(
                         'assets/images/image_calibrationBefore.png'),
                   ),
                   SizedBox(

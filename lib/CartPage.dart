@@ -96,7 +96,7 @@ class CartPage extends StatelessWidget {
             decoration: const BoxDecoration(
               image: DecorationImage(
                 fit: BoxFit.fill,
-                image: NetworkImage('assets/images/bgImage_cart.png'),
+                image: AssetImage('assets/images/bgImage_cart.png'),
               ),
             ),
           ),

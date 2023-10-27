@@ -18,25 +18,25 @@ class NavBarBottom extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           IconButton(
-            icon: Image.network('assets/images/icons/profile.png'),
+            icon: Image.asset('assets/images/icons/profile.png'),
             onPressed: () {},
             iconSize: 50,
             padding: EdgeInsets.all(20),
           ),
           IconButton(
-            icon: Image.network('assets/images/icons/commu.png'),
+            icon: Image.asset('assets/images/icons/commu.png'),
             onPressed: () {},
             iconSize: 50,
             padding: EdgeInsets.all(20),
           ),
           IconButton(
-            icon: Image.network('assets/images/icons/cart.png'),
+            icon: Image.asset('assets/images/icons/cart.png'),
             onPressed: () {},
             iconSize: 50,
             padding: EdgeInsets.all(20),
           ),
           IconButton(
-            icon: Image.network('assets/images/icons/setting.png'),
+            icon: Image.asset('assets/images/icons/setting.png'),
             onPressed: () {},
             iconSize: 50,
             padding: EdgeInsets.all(20),

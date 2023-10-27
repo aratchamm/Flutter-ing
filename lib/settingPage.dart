@@ -71,7 +71,7 @@ class SettingPage extends StatelessWidget {
               ),
               Stack(
                 children: [
-                  Image.network('assets/images/bgImageTop_settingPage.png'),
+                  Image.asset('assets/images/bgImageTop_settingPage.png'),
                   Positioned(
                     bottom: 30,
                     right: 0,
@@ -92,7 +92,7 @@ class SettingPage extends StatelessWidget {
               ),
               Align(
                 alignment: Alignment.bottomCenter,
-                child: Image.network(
+                child: Image.asset(
                     'assets/images/bgImageBottom_settingPage.png'),
               ),
             ],

@@ -52,7 +52,7 @@ class SignInPage1 extends StatelessWidget {
         decoration: const BoxDecoration(
           image: DecorationImage(
             fit: BoxFit.fill,
-            image: NetworkImage('assets/images/background-image_signIn_1.png'),
+            image: AssetImage('assets/images/background-image_signIn_1.png'),
           ),
         ),
         child: SingleChildScrollView(

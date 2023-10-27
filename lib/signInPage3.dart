@@ -52,7 +52,7 @@ class SignInPage3 extends StatelessWidget {
         decoration: const BoxDecoration(
           image: DecorationImage(
             fit: BoxFit.fill,
-            image: NetworkImage('assets/images/background-image_signIn_3.png'),
+            image: AssetImage('assets/images/background-image_signIn_3.png'),
           ),
         ),
         child: Column(
@@ -82,7 +82,7 @@ class SignInPage3 extends StatelessWidget {
                 Transform.scale(
                   scale: 0.5, // Adjust the scale factor as needed
                   child: Image(
-                    image: NetworkImage(
+                    image: AssetImage(
                         'assets/images/LinearProcess_littlemore.png'),
                   ),
                 )

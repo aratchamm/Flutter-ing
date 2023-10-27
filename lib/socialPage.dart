@@ -112,7 +112,7 @@ class SocialPage extends StatelessWidget {
                 Padding(
                   padding: const EdgeInsets.all(20.0),
                   child: Image(
-                    image: NetworkImage(
+                    image: AssetImage(
                         'assets/images/leaderboard_socialPage.png'),
                   ),
                 ),
@@ -125,7 +125,7 @@ class SocialPage extends StatelessWidget {
                         icon: Padding(
                           padding: const EdgeInsets.only(right: 8.0),
                           child: Image(
-                            image: NetworkImage(
+                            image: AssetImage(
                                 'assets/images/icons/UPCOMING EVENTS.png'),
                           ),
                         ),

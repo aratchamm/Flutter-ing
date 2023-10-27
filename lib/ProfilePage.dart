@@ -19,7 +19,7 @@ class ProfilePage extends StatelessWidget {
             decoration: const BoxDecoration(
               image: DecorationImage(
                 fit: BoxFit.fill,
-                image: NetworkImage('assets/images/bgImage_profile.png'),
+                image: AssetImage('assets/images/bgImage_profile.png'),
               ),
             ),
             child: Column(
@@ -187,7 +187,7 @@ class ProfilePage extends StatelessWidget {
                                         height: 10,
                                       ),
                                       Image(
-                                        image: NetworkImage(
+                                        image: AssetImage(
                                             'assets/images/profileAward.png'),
                                       ),
                                       SizedBox(
@@ -248,7 +248,7 @@ class ProfilePage extends StatelessWidget {
                       ),
                       child: const CircleAvatar(
                         radius: 80,
-                        backgroundImage: NetworkImage(
+                        backgroundImage: AssetImage(
                             'assets/images/socials/profile/profile.jpg'),
                       ),
                     )),

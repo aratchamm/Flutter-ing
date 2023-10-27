@@ -82,7 +82,7 @@ class WalletPage extends StatelessWidget {
               image: DecorationImage(
                 fit: BoxFit.fill,
                 image:
-                    NetworkImage('assets/images/bgImage_calibrationBefore.png'),
+                    AssetImage('assets/images/bgImage_calibrationBefore.png'),
               ),
             ),
           ),

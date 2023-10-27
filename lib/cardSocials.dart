@@ -38,7 +38,7 @@ class CardSocialImage extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.only(right: 10.0),
                         child: CircleAvatar(
-                          backgroundImage: NetworkImage(imageAccount),
+                          backgroundImage: AssetImage(imageAccount),
                         ),
                       ),
                       Column(
@@ -67,7 +67,8 @@ class CardSocialImage extends StatelessWidget {
               ),
               Container(
                 child: Image(
-                  image: NetworkImage(imagePath),
+                  image: AssetImage
+                  (imagePath),
                 ),
               ),
               SizedBox(
@@ -96,17 +97,17 @@ class CardSocialImage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   IconButton(
-                    icon: Image.network('assets/images/icons/like.png'),
+                    icon: Image.asset('assets/images/icons/like.png'),
                     onPressed: () {},
                     iconSize: 20,
                   ),
                   IconButton(
-                    icon: Image.network('assets/images/icons/comment.png'),
+                    icon: Image.asset('assets/images/icons/comment.png'),
                     onPressed: () {},
                     iconSize: 20,
                   ),
                   IconButton(
-                    icon: Image.network('assets/images/icons/share.png'),
+                    icon: Image.asset('assets/images/icons/share.png'),
                     onPressed: () {},
                     iconSize: 20,
                   ),
@@ -154,7 +155,7 @@ class CardSocialText extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.only(right: 10.0),
                         child: CircleAvatar(
-                          backgroundImage: NetworkImage(imageAccount),
+                          backgroundImage: AssetImage(imageAccount),
                         ),
                       ),
                       Column(
@@ -196,17 +197,17 @@ class CardSocialText extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   IconButton(
-                    icon: Image.network('assets/images/icons/like.png'),
+                    icon: Image.asset('assets/images/icons/like.png'),
                     onPressed: () {},
                     iconSize: 20,
                   ),
                   IconButton(
-                    icon: Image.network('assets/images/icons/comment.png'),
+                    icon: Image.asset('assets/images/icons/comment.png'),
                     onPressed: () {},
                     iconSize: 20,
                   ),
                   IconButton(
-                    icon: Image.network('assets/images/icons/share.png'),
+                    icon: Image.asset('assets/images/icons/share.png'),
                     onPressed: () {},
                     iconSize: 20,
                   ),
